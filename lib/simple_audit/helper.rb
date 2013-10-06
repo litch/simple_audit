@@ -4,7 +4,6 @@ module SimpleAudit #:nodoc:
     # Render the change log for the given audited model
 
     def render_audits(audited_model)
-      raise "BOOM"
       return '' unless audited_model.respond_to?(:audits)
       audits = (audited_model.audits || []).dup.sort{|a,b| b.created_at <=> a.created_at}
       res = ''
